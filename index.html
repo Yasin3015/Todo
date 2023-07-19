@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body>
+    
+    
+    <!-- ======================== model creation ============== -->
+
+    <div class="model" id="theModel">
+        <div class="container">
+            <div class="model__message">
+                <h2 class="model__message__header"> Warning</h2>
+                <p class="model__message__text"> You cannot create an empty to do, please enter your to do title </p>
+                <div class="model__message__buttons">
+                    <button type="button" class="primary" id="deletModel">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== end model creation ============== -->
+
+
+    <div class="todo__container">
+        <div class="todo__top">
+            <div class="layer">
+                <h1>Create Your <br> <span>To Do</span></h1>
+                <div class="todo__form">
+                    <input type="text" placeholder="To Do Title" id="title">
+                    <button type="button" id="addButton">Create To Do</button>
+                </div>
+            </div>
+        </div>
+        <div class="todo__bottom">
+            <div class="layer" id="lists">
+                <div class="todo">
+                    <h1 class="theTitle">Sudy Web Development</h1>
+                    <span class="delete__todo">Delete</span>
+                    <span>Completed</span>
+                </div>
+                <div class="todo completed">
+                    <h1 class="theTitle">Sudy Web Development</h1>
+                    <span class="delete__todo">Delete</span>
+                    <span>Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/JS/todo.js"></script>
+</body>
+</html>

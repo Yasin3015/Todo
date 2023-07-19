@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,600;1,400;1,700&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Koulen&family=Lobster&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Noto+Serif+HK:wght@200;300;400;500;600;700;800&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300;1,400;1,700&family=Tajawal:wght@200;300;700;800&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: rgb(57, 57, 134);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #3c048591;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #8d7aeb;
+}
+
+.todo__container{
+    width: 75%;
+    height: 85vh;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #8d7aeb;
+    text-align: center;
+    overflow: hidden;
+}
+.todo__top{
+    height: 40%;
+    background-image: url(../Images/pexels-karolina-grabowska-8547142.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid white;
+}
+.layer{
+    min-height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.463);
+    color: white;
+}
+.todo__top .layer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.todo__top h1{
+    font-size: 50px;
+    margin: 20px auto;
+    text-transform: uppercase;
+}
+.todo__top h1 span{
+    font-weight: 300;
+    color: rgb(205, 205, 205);
+    font-style: italic;
+}
+.todo__top input{
+    width: 650px;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+}
+.todo__top button{
+    padding: 10px 0px ;
+    background-color: rgb(21, 21, 153);
+    color: white;
+    border-radius: 5px;
+    width: 130px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* //////////////////////////////////// */
+
+.todo__bottom{
+    height: 60%;
+    background-image: url("../Images/pexels-cottonbro-studio-6830863.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+.todo__bottom .layer{
+    padding: 20px 0px;
+}
+.todo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.todo h1{
+    width: 74%;
+    border-right: 1px solid white;
+    height: 100%;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.todo span{
+    width: 13%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.todo span:nth-child(2){
+    border-right:1px solid white ;
+}
+.completed h1{
+    text-decoration: line-through;
+}
+.completed span:nth-child(3){
+    background-color: rgb(21, 21, 153);
+}
+@media (max-width:1050px) {
+    .todo__container{
+        width: 95%;
+    }
+    .todo__top input{
+        width: 500px;
+    }
+    .todo__bottom h1{
+        font-size: 30px;
+        font-weight: 500;
+        width: 72%;
+    }
+    .todo__bottom span{
+        width: 15%;
+    }
+}
+@media (max-width:690px) {
+    .todo__container{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+    .todo__form{
+        width: 100%;
+    }
+    .todo__top input{
+        width: 80%;
+        font-size: 15px;
+    }
+    .todo__top button{
+        font-size: 15px;
+        width: 19%;
+    }
+    .todo__bottom h1{
+        font-size: 20px;
+        font-weight: 300;
+        width: 60%;
+    }
+    .todo__bottom span{
+        width: 20%;
+    }
+}
+@media (max-width:690px) {
+    .todo__top input{
+        width: 90%;
+        font-size: 15px;
+        margin: auto;
+    }
+    .todo__top h1{
+        font-size: 40px;
+    }
+    .todo__top button{
+        font-size: 15px;
+        margin: 5px auto;
+        width: 90%;
+    }
+    .todo__bottom h1{
+        font-size: 15px;
+        font-weight: 300;
+        width: 60%;
+    }
+    .todo__bottom span{
+        width: 20%;
+        font-size: 13px;
+    }
+}
+
+
+/* /////////////////// Modal \\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.model{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.57);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+.model .container{
+    position: relative;
+    height: 100vh;
+}
+.model .container .model__message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #02184b !important;
+    width: 540px;
+    border-radius: 5px;
+}
+.model .container .model__message .model__message__header{
+    color: red;
+    font-size: 25px ;
+    padding: 20px;
+    font-weight: 300;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+.model .container .model__message .model__message__text{
+    color: gray;
+    font-size: 16px;
+    padding: 20px;
+    padding-bottom: 30px;
+    font-weight: 300;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+.model .container .model__message .model__message__buttons{
+    padding: 20px;
+    text-align: right;
+}
+.model .container .model__message .model__message__buttons button{
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 80px ;
+    background-color: #0b5ed7;
+    cursor: pointer;
+}
+@media (max-width:540px) {
+    .model .container .model__message{
+        width: 100%;
+    }
+}
